@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+/* Logo palette: gold → orange → magenta → purple on dark */
+:root,
+.dark {
+  --background: #030303;
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --border: rgba(255, 255, 255, 0.08);
+  --surface: #0c0c0e;
+  --surface-elevated: #141416;
+  --surface-muted: #0a0a0c;
+  --brand-purple: #701a75;
+  --brand-magenta: #a21caf;
+  --brand-orange: #f59e0b;
+  --brand-gold: #fbbf24;
+  --nav-pill: rgba(255, 255, 255, 0.04);
+  --glow-orange: rgba(245, 158, 11, 0.15);
+  --glow-purple: rgba(112, 26, 117, 0.2);
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --surface: #f8fafc;
+  --surface-elevated: #ffffff;
+  --surface-muted: #f1f5f9;
+  --nav-pill: rgba(15, 23, 42, 0.04);
+  --glow-orange: rgba(245, 158, 11, 0.08);
+  --glow-purple: rgba(112, 26, 117, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-muted: var(--surface-muted);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-magenta: var(--brand-magenta);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-gold: var(--brand-gold);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--brand-magenta) 35%, transparent);
+}
+
+/* Enterprise navbar */
+.nav-pill {
+  background: var(--nav-pill);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-glow-left {
+  background: radial-gradient(
+    ellipse 80% 120% at 0% 50%,
+    var(--glow-orange),
+    transparent 70%
+  );
+}
+
+.nav-glow-right {
+  background: radial-gradient(
+    ellipse 60% 100% at 100% 50%,
+    var(--glow-purple),
+    transparent 70%
+  );
+}
+
+.btn-book-call {
+  border: 1px solid color-mix(in srgb, var(--brand-orange) 60%, transparent);
+  background: color-mix(in srgb, var(--surface-elevated) 80%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--brand-orange) 15%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--brand-gold) 12%, transparent);
+}
+
+.btn-book-call:hover {
+  border-color: var(--brand-orange);
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--brand-orange) 25%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--brand-gold) 18%, transparent);
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--brand-purple),
+    var(--brand-magenta) 50%,
+    var(--brand-orange)
+  );
+}
+
+.text-gradient-brand {
+  background: linear-gradient(
+    90deg,
+    var(--brand-gold),
+    var(--brand-orange),
+    var(--brand-magenta)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-grid-dark {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--border) 80%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--border) 80%, transparent) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 35%, transparent 100%);
+}
+
+.gradient-border-hover {
+  position: relative;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gradient-border-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--brand-purple), var(--brand-orange));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.gradient-border-hover:hover::before {
+  opacity: 1;
+}
+
+.solutions-dropdown {
+  background: color-mix(in srgb, var(--surface-elevated) 95%, transparent);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.4),
+    0 0 0 1px color-mix(in srgb, var(--brand-orange) 8%, transparent);
+}
+
+/* Premium home hero */
+.hero-premium {
+  background: radial-gradient(
+      ellipse 120% 80% at 50% -20%,
+      color-mix(in srgb, var(--brand-purple) 12%, transparent),
+      transparent 55%
+    ),
+    var(--background);
+}
+
+.hero-premium-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 25%, transparent 75%);
+  opacity: 0.45;
+}
+
+.hero-premium-glow-orange {
+  background: radial-gradient(
+    ellipse 50% 45% at 10% 40%,
+    color-mix(in srgb, var(--brand-orange) 14%, transparent),
+    transparent 70%
+  );
+}
+
+.hero-premium-glow-purple {
+  background: radial-gradient(
+    ellipse 45% 50% at 90% 20%,
+    color-mix(in srgb, var(--brand-magenta) 12%, transparent),
+    transparent 70%
+  );
+}
+
+.hero-gif-ring {
+  border-radius: 1.35rem;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--brand-gold) 55%, transparent),
+    color-mix(in srgb, var(--brand-magenta) 45%, transparent),
+    color-mix(in srgb, var(--brand-orange) 50%, transparent)
+  );
+  opacity: 0.85;
+}
+
+.hero-gif-frame {
+  padding: 2px;
+}
+
+.companies-ticker-fade-left {
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+.companies-ticker-fade-right {
+  background: linear-gradient(to left, var(--background), transparent);
+}

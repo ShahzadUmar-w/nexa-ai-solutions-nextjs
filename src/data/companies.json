@@ -1,0 +1,68 @@
+{
+  "companies": [
+    {
+      "id": "meridian-capital",
+      "name": "Meridian Capital",
+      "industry": "Finance",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    },
+    {
+      "id": "harbor-legal",
+      "name": "Harbor Legal Group",
+      "industry": "Legal",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    },
+    {
+      "id": "northline",
+      "name": "Northline Manufacturing",
+      "industry": "Operations",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    },
+    {
+      "id": "summit-health",
+      "name": "Summit Health Partners",
+      "industry": "Healthcare",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    },
+    {
+      "id": "atlas-retail",
+      "name": "Atlas Retail Co.",
+      "industry": "Retail",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    },
+    {
+      "id": "clearwater",
+      "name": "Clearwater Insurance",
+      "industry": "Insurance",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    },
+    {
+      "id": "vertex",
+      "name": "Vertex Consulting",
+      "industry": "Professional services",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    },
+    {
+      "id": "pioneer",
+      "name": "Pioneer Logistics",
+      "industry": "Supply chain",
+      "logo": "",
+      "website": "",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+---
+description: Nexa AI boutique UI — Swiss design, no generic AI templates
+globs: "**/*.{tsx,ts,css}"
+alwaysApply: true
+---
+
+# Nexa AI — Human-Centric UI Architect
+
+**Role:** Senior Lead UI/UX Engineer & React Architect for Nexa AI Solutions (Office & Google Add-in services).
+
+**Philosophy:** Boutique agency, not AI slop. No excessive glows, 3D icons, or glassmorphism. Swiss design: typography, white space, rigid grid, subtle micro-interactions. Reference: Stripe × Linear.
+
+## Brand
+
+| Token | Value |
+|-------|-------|
+| Base | `#FFFFFF`, `#F8FAFC` (slate-50) |
+| Primary CTA | `#701a75` |
+| Accent (checks, highlights) | `#f59e0b` |
+| Headings / body | slate-900 / slate-600 |
+| Borders | 1px `slate-200`, cards `rounded-xl` |
+| Font | Geist Sans or Inter; H1 `tracking-tighter` semi-bold; body 16px `leading-relaxed` |
+
+## Sections (build section-by-section)
+
+1. **Header** — Text nav only; dark-slate pill “Book a Call”. No bulky nav backgrounds.
+2. **Hero** — Left-aligned; headline + max 2-line subcopy; code snippet or add-in mockup — not abstract AI art.
+3. **Services** — Asymmetric bento; monochrome Lucide icons (no circles). Large: Excel/Sheets; small: Word/Docs, Outlook/Gmail.
+4. **Portfolio** — Flat cards; hover: subtle 2px gradient border (primary → accent).
+5. **Testimonials** — Quote style; avatar + company; **no star ratings**.
+6. **Pricing** — “Solution packages” cards, orange check icons — not comparison tables.
+7. **Consultation** — Form left; “What happens next?” steps right.
+
+## Code
+
+- Next.js App Router, TypeScript, Tailwind utilities, functional components.
+- **framer-motion only:** `initial={{ opacity: 0, y: 10 }}` `whileInView={{ opacity: 1, y: 0 }}` with `viewport={{ once: true, margin: "-80px" }}`. No bounce/spin.
+- Hover: `scale-[1.02]` + `transition` on transform/opacity. Respect `prefers-reduced-motion`.
+- Generous padding/margin on every block. If it looks like a generic AI template, simplify.
+
+**Directive:** Enterprise-ready boutique feel. Section-by-section: theme → header → hero → rest.
