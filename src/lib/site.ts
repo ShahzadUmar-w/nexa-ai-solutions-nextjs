@@ -4,7 +4,7 @@ export const SITE = {
   tagline: "Office & Google Add-in Development",
   description:
     "Enterprise Microsoft Office add-ins and Google Workspace add-ons — Excel, Word, PowerPoint, Outlook, Docs, Sheets, Slides, and Gmail — with AI built into the tools your teams already use.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nexaai.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://officeaddindevelopment.com",
   email: "info.nexaaisolution@gmail.com",
   locale: "en_US",
 } as const;
