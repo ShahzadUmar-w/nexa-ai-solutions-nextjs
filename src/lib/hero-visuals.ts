@@ -74,7 +74,7 @@ export const SERVICE_HERO_VISUALS: Record<ServiceKey, HeroVisual> = {
     alt: "PowerPoint add-in for automated slide generation",
   },
   outlook: {
-    src: "/ooutlook/boligflow outlook add-in.png",
+    src: "/Ms-Icons/MicrosoftOutlook.gif",
     alt: "Outlook add-in task pane for inbox workflow automation",
   },
   "google-docs": {

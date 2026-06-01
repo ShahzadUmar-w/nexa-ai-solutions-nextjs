@@ -10,6 +10,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Testimonials } from "@/components/Testimonials";
 import { buildPageMetadata, organizationJsonLd, webSiteJsonLd } from "@/lib/seo";
 import { ROUTES, SITE } from "@/lib/site";
+import WorkFlow from "@/components/sections/WorkFlow";
 
 export const metadata = buildPageMetadata({
   title: `${SITE.shortName} | Office & Google Add-ins`,
@@ -34,6 +35,7 @@ export default function HomePage() {
         <HomeHero />
         <TrustSection />
         <CompaniesTicker />
+        <WorkFlow/>
         <ServiceCards />
         <HomeAboutSection />
         <PortfolioPreview />
