@@ -29,6 +29,9 @@ export function TrustSection() {
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
             We deliver high-performance Microsoft Office solutions that pass rigorous security audits and scale across global organizations.
           </p>
+          <p className="mt-2 text-sm text-muted-foreground/80">
+            Figures based on completed portfolio projects and verified Fiverr & Upwork client reviews.
+          </p>
         </FadeIn>
 
         {/* Professional Stats Bar - Square Design */}

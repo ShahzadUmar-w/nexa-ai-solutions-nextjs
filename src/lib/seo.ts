@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BRAND_LOGO_URL } from "@/lib/brand";
+import { BRAND_LOGO_URL, BRAND_OG_IMAGE } from "@/lib/brand";
 import { SITE } from "@/lib/site";
 
 type PageMetaInput = {
@@ -8,7 +8,20 @@ type PageMetaInput = {
   path: string;
   keywords?: string[];
   noIndex?: boolean;
+  ogImage?: string;
 };
+
+function truncate(text: string, max: number): string {
+  if (text.length <= max) return text;
+  return `${text.slice(0, max - 1).trim()}…`;
+}
+
+const DEFAULT_OG = {
+  url: BRAND_OG_IMAGE,
+  width: 1200,
+  height: 630,
+  alt: `${SITE.name} — Office & Google Add-in Development`,
+} as const;
 
 export function buildPageMetadata({
   title,
@@ -16,18 +29,28 @@ export function buildPageMetadata({
   path,
   keywords = [],
   noIndex = false,
+  ogImage = BRAND_OG_IMAGE,
 }: PageMetaInput): Metadata {
   const url = `${SITE.url}${path}`;
+  const ogTitleRaw = path === "/" ? title : `${title} | ${SITE.shortName}`;
+  const ogTitle = truncate(ogTitleRaw, 60);
+  const safeDescription = truncate(description, 160);
+
   const pageTitle =
     path === "/"
-      ? { absolute: title }
-      : title;
+      ? { absolute: truncate(title, 60) }
+      : truncate(title, 60);
 
-  const ogTitle = path === "/" ? title : `${title} | ${SITE.shortName}`;
+  const ogImageMeta = {
+    url: ogImage,
+    width: DEFAULT_OG.width,
+    height: DEFAULT_OG.height,
+    alt: DEFAULT_OG.alt,
+  };
 
   return {
     title: pageTitle,
-    description,
+    description: safeDescription,
     keywords: keywords.length > 0 ? keywords : undefined,
     alternates: { canonical: url },
     robots: noIndex
@@ -39,14 +62,14 @@ export function buildPageMetadata({
       url,
       siteName: SITE.name,
       title: ogTitle,
-      description,
-      images: [{ url: BRAND_LOGO_URL, alt: SITE.name, width: 96, height: 96 }],
+      description: safeDescription,
+      images: [ogImageMeta],
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
-      description,
-      images: [BRAND_LOGO_URL],
+      description: safeDescription,
+      images: [ogImage],
     },
   };
 }
@@ -58,10 +81,20 @@ export function organizationJsonLd() {
     name: SITE.name,
     url: SITE.url,
     logo: BRAND_LOGO_URL,
-    image: BRAND_LOGO_URL,
+    image: BRAND_OG_IMAGE,
     description: SITE.description,
     email: SITE.email,
-    sameAs: [],
+    ...(SITE.sameAs.length > 0 ? { sameAs: [...SITE.sameAs] } : {}),
+    knowsAbout: [
+      "Microsoft Office add-ins",
+      "Office 365 plugins",
+      "Office 365 add-ins",
+      "Google Workspace add-ons",
+      "Office.js",
+      "Microsoft Graph",
+      "Outlook add-in development",
+      "Excel add-in development",
+    ],
   };
 }
 
@@ -80,10 +113,24 @@ export function webSiteJsonLd() {
         url: BRAND_LOGO_URL,
       },
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE.url}/consultation`,
-      "query-input": "required name=search_term_string",
+  };
+}
+
+export function aggregateRatingJsonLd(input: {
+  ratingValue: number;
+  reviewCount: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.url,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: String(input.ratingValue),
+      reviewCount: String(input.reviewCount),
+      bestRating: "5",
+      worstRating: "1",
     },
   };
 }
@@ -122,7 +169,7 @@ export function creativeWorkJsonLd(input: {
     name: input.name,
     description: input.description,
     url: `${SITE.url}${input.path}`,
-    image: input.image ? `${SITE.url}${input.image}` : BRAND_LOGO_URL,
+    image: input.image ? `${SITE.url}${input.image}` : BRAND_OG_IMAGE,
     keywords: input.keywords?.join(", "),
     creator: {
       "@type": "Organization",
@@ -176,7 +223,7 @@ export function articleJsonLd(input: {
     ? input.image
     : input.image
       ? `${SITE.url}${input.image}`
-      : BRAND_LOGO_URL;
+      : BRAND_OG_IMAGE;
 
   return {
     "@context": "https://schema.org",

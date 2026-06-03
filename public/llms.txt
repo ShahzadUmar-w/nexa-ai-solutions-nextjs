@@ -1,0 +1,36 @@
+# Nexa AI Solutions
+
+> Custom Microsoft Office 365 add-ins and Google Workspace add-ons for Excel, Outlook, Word, PowerPoint, Docs, Sheets, Slides, and Gmail.
+
+Nexa AI Solutions builds Office.js and Apps Script applications with Microsoft Graph integrations, enterprise deployment, and fixed-scope delivery.
+
+## Primary services
+
+- /excel-add-in — Excel add-in development (Office.js, custom functions, API dashboards)
+- /outlook-add-in — Outlook add-in development (task panes, CRM, email automation)
+- /word-add-in — Word add-in development (document automation, templates, AI drafting)
+- /powerpoint-add-in — PowerPoint add-in development (slide automation, branded decks)
+- /google-docs-add-on — Google Docs add-on development
+- /google-sheets-add-on — Google Sheets add-on development
+- /google-slides-add-on — Google Slides add-on development
+- /gmail-add-on — Gmail add-on development
+- /services — All Office & Google add-in services
+
+## Company & trust
+
+- /about — About Nexa AI Solutions (6+ years, Office 365 & Google Workspace focus)
+- /work — Portfolio of 80+ add-in case studies with screenshots
+- /reviews — Client reviews from Fiverr and Upwork projects
+- /pricing — Discovery, Build, and Scale packages
+- /enterprise — Enterprise add-in programs
+- /how-we-work — Delivery methodology
+- /consultation — Free consultation booking
+
+## Guides (blog)
+
+- /blog — Office add-in development articles (Outlook, Excel, Word, PowerPoint, Office 365 plugins, Microsoft Graph)
+
+## Contact
+
+- Email: info.nexaaisolution@gmail.com
+- /consultation — Project brief and discovery call

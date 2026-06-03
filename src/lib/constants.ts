@@ -135,37 +135,64 @@ export type PackageTier = {
 
 export const PACKAGES: readonly PackageTier[] = [
   {
-    name: "Discovery",
-    price: "From $1000",
-    description: "Scope, feasibility, and a clickable prototype for stakeholder buy-in.",
+    name: "Starter",
+    price: "From $500",
+    description:
+      "Perfect for proof of concept projects, small automations, and initial validation.",
     features: [
-      "Requirements workshop",
-      "Technical architecture brief",
-      "Interactive prototype",
-      "Fixed timeline & deliverables",
+      "Requirements analysis",
+      "Technical consultation",
+      "Clickable prototype or POC",
+      "Basic Office/Google integration",
+      "Project roadmap",
     ],
   },
+
   {
-    name: "Build",
-    price: "From $5000",
-    description: "End-to-end add-in development, testing, and store submission support.",
+    name: "Professional",
+    price: "From $2,500",
+    description:
+      "Custom Office Add-in or Google Workspace Add-on development for real business workflows.",
     features: [
-      "Full add-in development",
-      "QA across Office apps",
-      "Admin & deployment guide",
-      "30-day post-launch support",
+      "Excel, Outlook, Word, PowerPoint, or Google Workspace Add-on",
+      "Modern React + TypeScript UI",
+      "Microsoft Graph / Google API integration",
+      "Authentication & user management",
+      "Testing & deployment support",
+      "30-day support",
     ],
     highlighted: true,
   },
+
   {
-    name: "Scale",
-    price: "Custom",
-    description: "Ongoing iteration, integrations, and dedicated engineering capacity.",
+    name: "Business",
+    price: "From $5,000",
+    description:
+      "Advanced business applications with AI automation, integrations, and cloud services.",
     features: [
-      "Dedicated sprint capacity",
-      "API & data integrations",
-      "Security reviews",
-      "Priority SLA",
+      "Office 365 or Google Workspace ecosystem integration",
+      "OpenAI / ChatGPT implementation",
+      "Custom backend (Node.js / .NET)",
+      "Database & API development",
+      "Workflow automation",
+      "Admin dashboard",
+      "60-day support",
+    ],
+  },
+
+  {
+    name: "Enterprise",
+    price: "Custom Quote",
+    description:
+      "Large-scale enterprise solutions with dedicated development and long-term support.",
+    features: [
+      "Multi-platform Office & Google solutions",
+      "SSO (Azure AD / Google Workspace)",
+      "Advanced security & compliance",
+      "Dedicated development team",
+      "Priority support SLA",
+      "Continuous feature development",
+      "Cloud architecture & DevOps",
     ],
   },
 ];

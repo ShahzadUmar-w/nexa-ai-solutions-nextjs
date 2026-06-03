@@ -5,7 +5,13 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { ContentSections } from "@/components/content/ContentSections";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { REVIEWS_PAGE_CONTENT } from "@/lib/content/inner-pages";
-import { breadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
+import { getReviewStats } from "@/lib/reviews";
+import {
+  aggregateRatingJsonLd,
+  breadcrumbJsonLd,
+  buildPageMetadata,
+  organizationJsonLd,
+} from "@/lib/seo";
 import { ROUTES } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
@@ -21,13 +27,22 @@ export const metadata = buildPageMetadata({
 });
 
 export default function ReviewsPage() {
+  const stats = getReviewStats();
+
   return (
     <SiteShell>
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: ROUTES.home },
-          { name: "Reviews", path: ROUTES.reviews },
-        ])}
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: ROUTES.home },
+            { name: "Reviews", path: ROUTES.reviews },
+          ]),
+          organizationJsonLd(),
+          aggregateRatingJsonLd({
+            ratingValue: stats.averageRating,
+            reviewCount: stats.total,
+          }),
+        ]}
       />
       <main>
         <PageHero

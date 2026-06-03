@@ -1,16 +1,19 @@
 import Link from "next/link";
 import type { BlogPost } from "@/data/blogPosts";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { getBlogReferenceLinks } from "@/lib/blog-faqs";
 import { encodePublicPath } from "@/lib/hero-visuals";
 import { blogPostPath, ROUTES } from "@/lib/site";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Calendar, Clock, ExternalLink } from "lucide-react";
 
 type BlogPostBodyProps = {
   post: BlogPost;
   relatedLinks: { label: string; href: string }[];
+  faqs: { question: string; answer: string }[];
 };
 
-export function BlogPostBody({ post, relatedLinks }: BlogPostBodyProps) {
+export function BlogPostBody({ post, relatedLinks, faqs }: BlogPostBodyProps) {
+  const references = getBlogReferenceLinks(post.category);
   const imageSrc = encodePublicPath(post.image);
 
   return (
@@ -84,6 +87,41 @@ export function BlogPostBody({ post, relatedLinks }: BlogPostBodyProps) {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.16} className="mt-12 rounded-xl border border-border bg-surface p-6 sm:p-8">
+          <p className="text-xs font-medium tracking-widest text-brand-orange uppercase">
+            References
+          </p>
+          <ul className="mt-4 space-y-2">
+            {references.map((ref) => (
+              <li key={ref.href}>
+                <a
+                  href={ref.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-muted hover:text-brand-orange"
+                >
+                  {ref.label}
+                  <ExternalLink className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </FadeIn>
+
+        <FadeIn delay={0.18} className="mt-12">
+          <h2 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+            Common questions
+          </h2>
+          <dl className="mt-6 divide-y divide-border rounded-xl border border-border bg-surface">
+            {faqs.map((item) => (
+              <div key={item.question} className="px-6 py-5">
+                <dt className="font-medium text-foreground">{item.question}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-muted">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </FadeIn>
 
         {relatedLinks.length > 0 && (
           <FadeIn delay={0.2} className="mt-14 rounded-xl border border-border bg-surface p-6 sm:p-8">

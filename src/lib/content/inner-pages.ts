@@ -85,6 +85,52 @@ export const PRICING_PAGE_CONTENT: ContentSection[] = [
   },
 ];
 
+export const HOME_FAQ: FaqItem[] = [
+  {
+    question: "What is an Office 365 add-in?",
+    answer:
+      "An Office 365 add-in is a web app that runs inside Excel, Outlook, Word, or PowerPoint using Office.js — so your team automates workflows without leaving Microsoft 365.",
+  },
+  {
+    question: "What is the difference between an Office add-in and a plugin?",
+    answer:
+      "Modern Office add-ins use Office.js and web technologies, deploy through Microsoft 365 admin center, and work across web and desktop Office. Legacy COM/VSTO plugins are a different technology with separate deployment models.",
+  },
+  {
+    question: "How much does custom Outlook or Excel add-in development cost?",
+    answer:
+      "Discovery packages start from $4,500. Full Build engagements for one app typically start from $18,000 depending on Office.js scope, Microsoft Graph integrations, and deployment requirements.",
+  },
+  {
+    question: "Do you build Google Workspace add-ons as well as Office add-ins?",
+    answer:
+      "Yes. We build Google Docs, Sheets, Slides, and Gmail add-ons with Apps Script alongside Microsoft Office 365 add-ins for Excel, Outlook, Word, and PowerPoint.",
+  },
+  {
+    question: "How long does an Office add-in project take?",
+    answer:
+      "Discovery runs 1–2 weeks. A focused Build for one Office or Google app is often 6–12 weeks after scope is confirmed, including pilot testing and admin deployment support.",
+  },
+];
+
+export const CONSULTATION_FAQ: FaqItem[] = [
+  {
+    question: "Is the consultation really free?",
+    answer:
+      "Yes. The initial consultation and project brief review are free. We use the call to confirm feasibility, Office.js or Apps Script approach, and whether Discovery or Build fits your timeline.",
+  },
+  {
+    question: "What should I prepare before the consultation?",
+    answer:
+      "Share your target Office or Google app, sample files or screenshots, integrations (CRM, ERP, Graph), user count, and deployment constraints (Microsoft 365 admin center or Google Workspace admin).",
+  },
+  {
+    question: "How fast do you respond after I submit the form?",
+    answer:
+      "We reply within one business day with scope questions, package options, and next steps for a discovery call or written proposal.",
+  },
+];
+
 export const CONSULTATION_PAGE_CONTENT: ContentSection[] = [
   {
     id: "consult-intro",
@@ -115,7 +161,7 @@ export const REVIEWS_PAGE_CONTENT: ContentSection[] = [
 ];
 
 export const ABOUT_STATS = [
-  { value: "5+", label: "Years experience" },
+  { value: "6+", label: "Years experience" },
   { value: "91+", label: "Projects delivered" },
   { value: "83+", label: "Portfolio builds" },
   { value: "4.9/5", label: "Client rating" },
@@ -125,7 +171,7 @@ export const ABOUT_INTRO = {
   lead: "At Nexa AI Solutions, we build practical software that teams actually use.",
   paragraphs: [
     "No overcomplicated systems, no unused tools—just reliable, well-designed solutions that improve everyday business workflows.",
-    "We are a software development company with 5+ years of experience delivering AI-powered automation, Office 365 add-ins, and Google Workspace add-ins that help businesses simplify operations, connect systems, and automate repetitive work. Our focus is simple: understand the real problem first, then build software that delivers real results.",
+    "We are a software development company with 6+ years of experience delivering AI-powered automation, Office 365 add-ins, and Google Workspace add-ins that help businesses simplify operations, connect systems, and automate repetitive work. Our focus is simple: understand the real problem first, then build software that delivers real results.",
     "We develop solutions across web, desktop, and cloud platforms based on business needs, with strong expertise in automation, Office 365 Add-ins, and system integrations where multiple tools need to work together seamlessly.",
   ],
 } as const;

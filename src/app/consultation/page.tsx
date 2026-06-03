@@ -3,8 +3,9 @@ import { Consultation } from "@/components/Consultation";
 import { ContentSections } from "@/components/content/ContentSections";
 import { PageHero } from "@/components/sections/PageHero";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { CONSULTATION_PAGE_CONTENT } from "@/lib/content/inner-pages";
-import { breadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
+import { FaqSection } from "@/components/content/ContentSections";
+import { CONSULTATION_FAQ, CONSULTATION_PAGE_CONTENT } from "@/lib/content/inner-pages";
+import { breadcrumbJsonLd, buildPageMetadata, faqJsonLd } from "@/lib/seo";
 import { ROUTES } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
@@ -23,10 +24,13 @@ export default function ConsultationPage() {
   return (
     <SiteShell>
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: ROUTES.home },
-          { name: "Consultation", path: ROUTES.consultation },
-        ])}
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: ROUTES.home },
+            { name: "Consultation", path: ROUTES.consultation },
+          ]),
+          faqJsonLd(CONSULTATION_FAQ),
+        ]}
       />
       <main>
         <PageHero
@@ -41,6 +45,11 @@ export default function ConsultationPage() {
           primaryCta={{ label: "Scroll to form", href: "#consultation-form" }}
         />
         <ContentSections sections={CONSULTATION_PAGE_CONTENT} />
+        <FaqSection
+          title="Consultation FAQs"
+          items={CONSULTATION_FAQ}
+          className="bg-surface"
+        />
         <div id="consultation-form">
           <Consultation showHeading={false} />
         </div>

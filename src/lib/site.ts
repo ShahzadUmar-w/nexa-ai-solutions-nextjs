@@ -3,10 +3,12 @@ export const SITE = {
   shortName: "Nexa AI",
   tagline: "Office & Google Add-in Development",
   description:
-    "Enterprise Microsoft Office add-ins and Google Workspace add-ons — Excel, Word, PowerPoint, Outlook, Docs, Sheets, Slides, and Gmail — with AI built into the tools your teams already use.",
+    "Custom Office 365 add-ins & Google Workspace add-ons — Excel, Outlook, Word, PowerPoint. Office.js, Microsoft Graph, enterprise deployment.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://officeaddindevelopment.com",
   email: "info.nexaaisolution@gmail.com",
   locale: "en_US",
+  /** Add Fiverr, Upwork, LinkedIn URLs when available — improves brand entity SEO/GEO */
+  sameAs: [] as string[],
 } as const;
 
 export const ROUTES = {

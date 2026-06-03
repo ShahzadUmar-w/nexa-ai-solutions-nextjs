@@ -20,6 +20,9 @@ export function brandAssetUrl(path: string) {
 
 export const BRAND_LOGO_URL = brandAssetUrl(BRAND.favicon96);
 
+/** 1200×630 OG image for social sharing and AI link previews */
+export const BRAND_OG_IMAGE = brandAssetUrl("/og-office-addin-development.png");
+
 export const siteIcons: Metadata["icons"] = {
   icon: [
     { url: BRAND.faviconIco, sizes: "any" },

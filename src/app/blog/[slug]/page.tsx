@@ -4,6 +4,7 @@ import { BlogPostBody, RelatedBlogPosts } from "@/components/blog/BlogPostBody";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { blogPosts, findBlogPostBySlug } from "@/data/blogPosts";
+import { getBlogPostFaqs } from "@/lib/blog-faqs";
 import { getBlogPostKeywords, getBlogRelatedLinks } from "@/lib/blog-seo";
 import { encodePublicPath } from "@/lib/hero-visuals";
 import {
@@ -47,6 +48,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const relatedLinks = post.relatedLinks ?? getBlogRelatedLinks(post);
   const keywords = getBlogPostKeywords(post);
   const imagePath = encodePublicPath(post.image);
+  const faqs = getBlogPostFaqs(post);
 
   const jsonLd = [
     breadcrumbJsonLd([
@@ -63,14 +65,14 @@ export default async function BlogPostPage({ params }: PageProps) {
       author: post.author,
       keywords,
     }),
-    ...(post.faqs?.length ? [faqJsonLd(post.faqs)] : []),
+    faqJsonLd(faqs),
   ];
 
   return (
     <SiteShell>
       <JsonLd data={jsonLd} />
       <main>
-        <BlogPostBody post={post} relatedLinks={relatedLinks} />
+        <BlogPostBody post={post} relatedLinks={relatedLinks} faqs={faqs} />
         <RelatedBlogPosts posts={blogPosts} currentSlug={slug} />
         <CtaBanner
           title="Ready to build your Office or Google add-in?"
