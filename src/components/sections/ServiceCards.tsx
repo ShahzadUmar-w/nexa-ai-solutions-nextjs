@@ -50,7 +50,7 @@ function ServiceCardGrid({
 
 export function ServiceCards() {
   return (
-    <section className="bg-background py-16 lg:py-24" aria-labelledby="services-heading">
+    <section className="bg-[#0d111a] py-16 lg:py-24" aria-labelledby="services-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn className="mx-auto mb-14 max-w-2xl text-center">
           <h2

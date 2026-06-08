@@ -85,6 +85,27 @@ export function organizationJsonLd() {
     description: SITE.description,
     email: SITE.email,
     ...(SITE.sameAs.length > 0 ? { sameAs: [...SITE.sameAs] } : {}),
+    ...(SITE.address.streetAddress || SITE.address.addressLocality || SITE.address.addressRegion || SITE.address.postalCode
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: SITE.address.streetAddress,
+            addressLocality: SITE.address.addressLocality,
+            addressRegion: SITE.address.addressRegion,
+            postalCode: SITE.address.postalCode,
+            addressCountry: SITE.country,
+          },
+        }
+      : {}),
+    ...(SITE.geo.latitude && SITE.geo.longitude
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: SITE.geo.latitude,
+            longitude: SITE.geo.longitude,
+          },
+        }
+      : {}),
     knowsAbout: [
       "Microsoft Office add-ins",
       "Office 365 plugins",

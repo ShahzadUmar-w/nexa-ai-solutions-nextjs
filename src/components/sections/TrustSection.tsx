@@ -15,7 +15,7 @@ export function TrustSection() {
   ];
 
   return (
-    <section className="py-24 bg-background border-t border-border/50" aria-labelledby="trust-heading">
+    <section className="py-24 bg-[#090b12] border-t border-border/50" aria-labelledby="trust-heading">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Top Header Section */}

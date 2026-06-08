@@ -7,6 +7,29 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://officeaddindevelopment.com",
   email: "info.nexaaisolution@gmail.com",
   locale: "en_US",
+  keywords: [
+    "Office add-in development",
+    "Office 365 add-ins",
+    "Google Workspace add-ons",
+    "Excel add-in",
+    "Outlook add-in",
+    "Word add-in",
+    "PowerPoint add-in",
+    "Apps Script development",
+    "Microsoft Graph",
+  ] as const,
+  country: "Worldwide",
+  region: "Global",
+  geo: {
+    latitude: "",
+    longitude: "",
+  },
+  address: {
+    streetAddress: "",
+    addressLocality: "",
+    addressRegion: "",
+    postalCode: "",
+  },
   /** Add Fiverr, Upwork, LinkedIn URLs when available — improves brand entity SEO/GEO */
   sameAs: [] as string[],
 } as const;

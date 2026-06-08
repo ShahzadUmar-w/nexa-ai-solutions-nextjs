@@ -13,7 +13,7 @@ export function PortfolioPreview({ limit = 6 }: PortfolioPreviewProps) {
   const projects = getFeaturedPortfolio(limit);
 
   return (
-    <section className="border-t border-border bg-surface py-16 lg:py-24">
+    <section className="border-t border-border bg-[#10141d] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>

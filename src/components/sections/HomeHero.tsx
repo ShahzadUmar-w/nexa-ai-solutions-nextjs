@@ -28,12 +28,12 @@ export function HomeHero() {
                 Nexa AI Solutions
               </p>
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl xl:text-6xl leading-[1.08]">
-                Office 365 & Google Workspace Add-in Development
+                Office 365 addin plugins & Google Workspace Add-in Development
               </h1>
 
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-zinc-400/90">
-                Custom Excel, Outlook, Word, and PowerPoint add-ins plus Google Docs, Sheets,
-                Slides, and Gmail add-ons — built with Office.js and Apps Script for teams that
+                Custom Excel addin, Outlook addin, Word add-in, and PowerPoint add-ins plus Google Docs addon, Sheets addon,
+                Slides addon, and Gmail add-ons , built with Office.js and Apps Script for teams that
                 live in Microsoft 365 and Google Workspace.
               </p>
             </FadeIn>

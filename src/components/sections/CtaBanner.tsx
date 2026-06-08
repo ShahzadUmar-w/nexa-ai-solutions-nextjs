@@ -12,7 +12,7 @@ export function CtaBanner({
   description = "Book a 30-minute call. We'll map your Office APIs, timeline, and fixed-price options.",
 }: CtaBannerProps) {
   return (
-    <section className="bg-surface py-16 lg:py-20">
+    <section className="bg-[#121523] py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="rounded-2xl border border-border bg-surface-elevated px-6 py-10 text-center sm:px-12 sm:py-14">
