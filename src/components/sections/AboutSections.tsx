@@ -432,7 +432,7 @@ export function HomeAboutSection() {
                   autoPlay 
                   controls 
                   className="h-full w-full object-contain"
-                  src="/intro/nexa ai solution new.mp4" // Path from your public folder
+                  src="/intro/nexa new.mp4" // Path from your public folder
                 >
                   Your browser does not support the video tag.
                 </video>
