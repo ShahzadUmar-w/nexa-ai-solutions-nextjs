@@ -1,7 +1,7 @@
 import { SiteShell } from "@/components/layout/SiteShell";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { HomeAboutSection } from "@/components/sections/AboutSections";
-import { HomeHero } from "@/components/sections/HomeHero";
+import  HomeHero  from "@/components/sections/HomeHero";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { CompaniesTicker } from "@/components/sections/CompaniesTicker";
 import { ServiceCards } from "@/components/sections/ServiceCards";
@@ -77,17 +77,17 @@ export default function HomePage() {
         
         {/* Semantic Sectioning for Indexing */}
         <section id="trust">
-          <TrustSection />
+          {/* <TrustSection /> */}
           <CompaniesTicker />
         </section>
-
+<section id="services">
+          <ServiceCards />
+        </section>
         <section id="process">
           <WorkFlow/>
         </section>
 
-        <section id="services">
-          <ServiceCards />
-        </section>
+        
 
         <section id="about">
           <HomeAboutSection />

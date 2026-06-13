@@ -119,8 +119,8 @@ export function CompaniesTicker() {
             Trusted by teams shipping real add-ins
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-muted">
-            {CLIENT_PROJECTS.length}+ delivered solutions across Word, Outlook, Excel, and
-            Microsoft 365 — {portfolioProjects.length}+ in our public portfolio.
+            100+ delivered solutions across Word, Outlook, Excel, and
+            Microsoft 365 , Google workspace addons— {portfolioProjects.length}+ in our public portfolio.
           </p>
         </FadeIn>
       </div>
