@@ -5,7 +5,7 @@ type PageHeroVisualProps = HeroVisual;
 export function PageHeroVisual({ src, alt }: PageHeroVisualProps) {
   return (
     <div className="relative flex items-center justify-center lg:justify-end">
-      <div className="relative z-10 overflow-hidden rounded-2xl border border-border bg-surface-elevated shadow-2xl shadow-black/50">
+      <div className="relative overflow-hidden ">
         <img
           src={src}
           alt={alt}

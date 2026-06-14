@@ -74,7 +74,7 @@ export const SERVICE_HERO_VISUALS: Record<ServiceKey, HeroVisual> = {
     alt: "PowerPoint add-in for automated slide generation",
   },
   outlook: {
-    src: "/Ms-Icons/MicrosoftOutlook.gif",
+    src: "/hero_images/ChatGPT_Image_Jun_13__2026__04_09_23_PM-removebg-preview.png",
     alt: "Outlook add-in task pane for inbox workflow automation",
   },
   "google-docs": {
